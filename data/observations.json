@@ -1,0 +1,692 @@
+[
+  {
+    "id": "inc-001",
+    "service": "payments",
+    "alert": "Investigate payments: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "transaction waiting on lock; blocking_pid=412"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=payments accepted request trace=synthetic-1"
+      }
+    ],
+    "db_state": "blocked",
+    "open_orders": 8
+  },
+  {
+    "id": "inc-002",
+    "service": "orders",
+    "alert": "Investigate orders: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "transaction waiting on lock; blocking_pid=412"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=orders accepted request trace=synthetic-2"
+      }
+    ],
+    "db_state": "blocked",
+    "open_orders": 9
+  },
+  {
+    "id": "inc-003",
+    "service": "inventory",
+    "alert": "Investigate inventory: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "transaction waiting on lock; blocking_pid=412"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=inventory accepted request trace=synthetic-3"
+      }
+    ],
+    "db_state": "blocked",
+    "open_orders": 10
+  },
+  {
+    "id": "inc-004",
+    "service": "gateway",
+    "alert": "Investigate gateway: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "transaction waiting on lock; blocking_pid=412"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=gateway accepted request trace=synthetic-4"
+      }
+    ],
+    "db_state": "blocked",
+    "open_orders": 11
+  },
+  {
+    "id": "inc-005",
+    "service": "billing",
+    "alert": "Investigate billing: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "transaction waiting on lock; blocking_pid=412"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=billing accepted request trace=synthetic-5"
+      }
+    ],
+    "db_state": "blocked",
+    "open_orders": 12
+  },
+  {
+    "id": "inc-006",
+    "service": "payments",
+    "alert": "Investigate payments: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "upstream request deadline exceeded; dependency=bank"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=payments accepted request trace=synthetic-6"
+      }
+    ],
+    "db_state": "timeout",
+    "open_orders": 13
+  },
+  {
+    "id": "inc-007",
+    "service": "orders",
+    "alert": "Investigate orders: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "upstream request deadline exceeded; dependency=bank"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=orders accepted request trace=synthetic-7"
+      }
+    ],
+    "db_state": "timeout",
+    "open_orders": 14
+  },
+  {
+    "id": "inc-008",
+    "service": "inventory",
+    "alert": "Investigate inventory: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "upstream request deadline exceeded; dependency=bank"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=inventory accepted request trace=synthetic-8"
+      }
+    ],
+    "db_state": "timeout",
+    "open_orders": 15
+  },
+  {
+    "id": "inc-009",
+    "service": "gateway",
+    "alert": "Investigate gateway: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "upstream request deadline exceeded; dependency=bank"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=gateway accepted request trace=synthetic-9"
+      }
+    ],
+    "db_state": "timeout",
+    "open_orders": 16
+  },
+  {
+    "id": "inc-010",
+    "service": "billing",
+    "alert": "Investigate billing: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "upstream request deadline exceeded; dependency=bank"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=billing accepted request trace=synthetic-10"
+      }
+    ],
+    "db_state": "timeout",
+    "open_orders": 17
+  },
+  {
+    "id": "inc-011",
+    "service": "payments",
+    "alert": "Investigate payments: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "connection pool exhausted; active=20 max=20"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=payments accepted request trace=synthetic-11"
+      }
+    ],
+    "db_state": "pool_full",
+    "open_orders": 18
+  },
+  {
+    "id": "inc-012",
+    "service": "orders",
+    "alert": "Investigate orders: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "connection pool exhausted; active=20 max=20"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=orders accepted request trace=synthetic-12"
+      }
+    ],
+    "db_state": "pool_full",
+    "open_orders": 19
+  },
+  {
+    "id": "inc-013",
+    "service": "inventory",
+    "alert": "Investigate inventory: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "connection pool exhausted; active=20 max=20"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=inventory accepted request trace=synthetic-13"
+      }
+    ],
+    "db_state": "pool_full",
+    "open_orders": 20
+  },
+  {
+    "id": "inc-014",
+    "service": "gateway",
+    "alert": "Investigate gateway: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "connection pool exhausted; active=20 max=20"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=gateway accepted request trace=synthetic-14"
+      }
+    ],
+    "db_state": "pool_full",
+    "open_orders": 21
+  },
+  {
+    "id": "inc-015",
+    "service": "billing",
+    "alert": "Investigate billing: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "connection pool exhausted; active=20 max=20"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=billing accepted request trace=synthetic-15"
+      }
+    ],
+    "db_state": "pool_full",
+    "open_orders": 22
+  },
+  {
+    "id": "inc-016",
+    "service": "payments",
+    "alert": "Investigate payments: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "write failed: no space left on device; usage_pct=99"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=payments accepted request trace=synthetic-16"
+      }
+    ],
+    "db_state": "disk_full",
+    "open_orders": 23
+  },
+  {
+    "id": "inc-017",
+    "service": "orders",
+    "alert": "Investigate orders: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "write failed: no space left on device; usage_pct=99"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=orders accepted request trace=synthetic-17"
+      }
+    ],
+    "db_state": "disk_full",
+    "open_orders": 24
+  },
+  {
+    "id": "inc-018",
+    "service": "inventory",
+    "alert": "Investigate inventory: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "write failed: no space left on device; usage_pct=99"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=inventory accepted request trace=synthetic-18"
+      }
+    ],
+    "db_state": "disk_full",
+    "open_orders": 25
+  },
+  {
+    "id": "inc-019",
+    "service": "gateway",
+    "alert": "Investigate gateway: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "write failed: no space left on device; usage_pct=99"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=gateway accepted request trace=synthetic-19"
+      }
+    ],
+    "db_state": "disk_full",
+    "open_orders": 26
+  },
+  {
+    "id": "inc-020",
+    "service": "billing",
+    "alert": "Investigate billing: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "write failed: no space left on device; usage_pct=99"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=billing accepted request trace=synthetic-20"
+      }
+    ],
+    "db_state": "disk_full",
+    "open_orders": 27
+  },
+  {
+    "id": "inc-021",
+    "service": "payments",
+    "alert": "Investigate payments: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "startup failed: missing required configuration PAYMENT_REGION"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=payments accepted request trace=synthetic-21"
+      }
+    ],
+    "db_state": "config_error",
+    "open_orders": 28
+  },
+  {
+    "id": "inc-022",
+    "service": "orders",
+    "alert": "Investigate orders: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "startup failed: missing required configuration PAYMENT_REGION"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=orders accepted request trace=synthetic-22"
+      }
+    ],
+    "db_state": "config_error",
+    "open_orders": 29
+  },
+  {
+    "id": "inc-023",
+    "service": "inventory",
+    "alert": "Investigate inventory: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "startup failed: missing required configuration PAYMENT_REGION"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=inventory accepted request trace=synthetic-23"
+      }
+    ],
+    "db_state": "config_error",
+    "open_orders": 30
+  },
+  {
+    "id": "inc-024",
+    "service": "gateway",
+    "alert": "Investigate gateway: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "startup failed: missing required configuration PAYMENT_REGION"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=gateway accepted request trace=synthetic-24"
+      }
+    ],
+    "db_state": "config_error",
+    "open_orders": 31
+  },
+  {
+    "id": "inc-025",
+    "service": "billing",
+    "alert": "Investigate billing: latency or error alert",
+    "health": {
+      "status": "degraded",
+      "http_status": 503
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "ERROR",
+        "message": "startup failed: missing required configuration PAYMENT_REGION"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=billing accepted request trace=synthetic-25"
+      }
+    ],
+    "db_state": "config_error",
+    "open_orders": 32
+  },
+  {
+    "id": "inc-026",
+    "service": "payments",
+    "alert": "Investigate payments: health review",
+    "health": {
+      "status": "healthy",
+      "http_status": 200
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "INFO",
+        "message": "request completed; status=200; latency_ms=42"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=payments accepted request trace=synthetic-26"
+      }
+    ],
+    "db_state": "ok",
+    "open_orders": 33
+  },
+  {
+    "id": "inc-027",
+    "service": "orders",
+    "alert": "Investigate orders: health review",
+    "health": {
+      "status": "healthy",
+      "http_status": 200
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "INFO",
+        "message": "request completed; status=200; latency_ms=42"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=orders accepted request trace=synthetic-27"
+      }
+    ],
+    "db_state": "ok",
+    "open_orders": 34
+  },
+  {
+    "id": "inc-028",
+    "service": "inventory",
+    "alert": "Investigate inventory: health review",
+    "health": {
+      "status": "healthy",
+      "http_status": 200
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "INFO",
+        "message": "request completed; status=200; latency_ms=42"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=inventory accepted request trace=synthetic-28"
+      }
+    ],
+    "db_state": "ok",
+    "open_orders": 35
+  },
+  {
+    "id": "inc-029",
+    "service": "gateway",
+    "alert": "Investigate gateway: health review",
+    "health": {
+      "status": "healthy",
+      "http_status": 200
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "INFO",
+        "message": "request completed; status=200; latency_ms=42"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=gateway accepted request trace=synthetic-29"
+      }
+    ],
+    "db_state": "ok",
+    "open_orders": 36
+  },
+  {
+    "id": "inc-030",
+    "service": "billing",
+    "alert": "Investigate billing: health review",
+    "health": {
+      "status": "healthy",
+      "http_status": 200
+    },
+    "logs": [
+      {
+        "timestamp": "2026-11-24T10:00:00Z",
+        "level": "INFO",
+        "message": "request completed; status=200; latency_ms=42"
+      },
+      {
+        "timestamp": "2026-11-24T09:59:00Z",
+        "level": "INFO",
+        "message": "service=billing accepted request trace=synthetic-30"
+      }
+    ],
+    "db_state": "ok",
+    "open_orders": 37
+  }
+]

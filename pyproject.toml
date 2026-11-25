@@ -1,0 +1,30 @@
+[project]
+name = "opspilot"
+version = "0.1.0"
+description = "Incident triage, evidence tools and approval-gated mock actions"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "pydantic-settings>=2.7,<3",
+  "httpx>=0.28,<1", "langgraph>=1,<2", "langgraph-checkpoint-sqlite>=3,<4",
+  "sqlglot>=27,<31", "google-genai>=1.30,<3",
+]
+[project.optional-dependencies]
+postgres = ["langgraph-checkpoint-postgres>=3,<4", "psycopg[binary,pool]>=3.2,<4"]
+tracing = ["langfuse>=3,<6"]
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
+[project.scripts]
+opspilot = "opspilot.cli:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"data" = "opspilot/data"

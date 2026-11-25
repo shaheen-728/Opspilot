@@ -1,0 +1,34 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: opspilot_test
+          POSTGRES_USER: opspilot
+          POSTGRES_PASSWORD: test-only
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U opspilot -d opspilot_test"
+          --health-interval 3s --health-timeout 3s --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.13.9"
+          python-version: "3.12"
+      - run: uv sync --locked --extra postgres
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pytest -q
+        env:
+          OPSPILOT_TEST_POSTGRES: postgresql://opspilot:test-only@localhost:5432/opspilot_test?sslmode=disable
+      - run: uv run opspilot eval --output results/ci-offline.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: offline-fixture-results
+          path: results/

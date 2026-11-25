@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpsPilot</title><style>
+body{font:16px system-ui;max-width:940px;margin:40px auto;padding:0 20px;background:#111827;color:#e5e7eb}h1{color:#67e8f9}button,input,select{font:inherit;padding:10px;margin:5px;border-radius:6px;border:1px solid #475569}button{cursor:pointer;background:#a5f3fc}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#1f2937;padding:18px;border-radius:10px}a{color:#67e8f9}.muted{color:#94a3b8}
+</style><h1>OpsPilot</h1><p>Investigate synthetic backend incidents. Review evidence. Approve a <b>mock ticket</b>.</p>
+<p class="muted">Offline mode is deterministic; select Gemini in server configuration for actual LLM tool calling.</p>
+<label>API key (if configured) <input id="key" type="password" autocomplete="off"></label><br>
+<label>Scenario <select id="scenario"></select></label><button id="load">Load scenarios</button><button id="start">Investigate</button>
+<p id="status">Ready</p><button id="approve" disabled>Approve mock ticket</button><button id="reject" disabled>Reject</button>
+<h2>Report</h2><pre id="report">No incident yet.</pre><h2>Live steps</h2><pre id="events"></pre><p><a href="/docs">API documentation</a></p>
+<script>
+let incident=null,busy=false;
+const $=id=>document.getElementById(id);
+async function api(path,method='GET',data){let h={'Content-Type':'application/json'};if($('key').value)h['X-API-Key']=$('key').value;const r=await fetch(path,{method,headers:h,body:data?JSON.stringify(data):undefined});if(!r.ok)throw Error(await r.text());return r.json()}
+function showError(e){$('status').textContent='Error: '+e.message;busy=false;$('start').disabled=false}
+$('load').onclick=async()=>{try{const rows=await api('/scenarios');$('scenario').replaceChildren(...rows.map(r=>{let o=document.createElement('option');o.value=r.id;o.textContent=r.id+' — '+r.alert;return o}))}catch(e){showError(e)}};
+async function refresh(){const row=await api('/incidents/'+incident);$('status').textContent=row.status+' · '+incident;$('report').textContent=JSON.stringify(row.result||{error:row.error},null,2);const waiting=row.status==='awaiting_approval';$('approve').disabled=!waiting;$('reject').disabled=!waiting;if(row.status!=='running'){busy=false;$('start').disabled=false;return false}return true}
+$('start').onclick=async()=>{try{if(busy)return;busy=true;$('start').disabled=true;const r=await api('/incidents','POST',{scenario_id:$('scenario').value});incident=r.id;let after=0;$('events').textContent='';while(true){let h={};if($('key').value)h['X-API-Key']=$('key').value;const response=await fetch('/incidents/'+incident+'/events?after='+after,{headers:h});if(!response.ok)throw Error(await response.text());const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='';while(true){let {value,done}=await reader.read();if(done)break;buffer+=decoder.decode(value,{stream:true});let chunks=buffer.split('\n\n');buffer=chunks.pop();for(let frame of chunks){if(frame.startsWith(':'))continue;$('events').textContent+=frame+'\n\n';let m=frame.match(/^id: (\d+)/m);if(m)after=Number(m[1])}}if(!await refresh())break}}catch(e){showError(e)}};
+for(let d of ['approve','reject'])$(d).onclick=async()=>{try{$('approve').disabled=true;$('reject').disabled=true;await api('/incidents/'+incident+'/approve','POST',{decision:d,note:'Reviewed in local demo UI'});await refresh()}catch(e){showError(e)}};
+$('load').click();
+</script></html>

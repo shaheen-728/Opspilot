@@ -1,0 +1,32 @@
+[
+  {
+    "id": "rb-1",
+    "title": "database lock",
+    "content": "Symptoms: transaction waiting on lock; blocking_pid=412. Investigation: Inspect the blocking transaction; ask the database owner before cancelling it."
+  },
+  {
+    "id": "rb-2",
+    "title": "upstream timeout",
+    "content": "Symptoms: upstream request deadline exceeded; dependency=bank. Investigation: Check dependency health and retry budgets; avoid a retry storm."
+  },
+  {
+    "id": "rb-3",
+    "title": "connection pool exhausted",
+    "content": "Symptoms: connection pool exhausted; active=20 max=20. Investigation: Inspect long-running queries and connection leaks before changing pool limits."
+  },
+  {
+    "id": "rb-4",
+    "title": "disk full",
+    "content": "Symptoms: write failed: no space left on device; usage_pct=99. Investigation: Inspect disk usage and approved retention policies; do not delete files automatically."
+  },
+  {
+    "id": "rb-5",
+    "title": "bad deployment",
+    "content": "Symptoms: startup failed: missing required configuration PAYMENT_REGION. Investigation: Compare deployment configuration with the last healthy version; propose an approved rollback."
+  },
+  {
+    "id": "rb-6",
+    "title": "healthy",
+    "content": "Symptoms: request completed; status=200; latency_ms=42. Investigation: Observe service metrics; no corrective write is indicated by this snapshot."
+  }
+]

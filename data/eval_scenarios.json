@@ -1,0 +1,332 @@
+[
+  {
+    "id": "inc-001",
+    "expected_root_cause": "database_lock",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-002",
+    "expected_root_cause": "database_lock",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-003",
+    "expected_root_cause": "database_lock",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-004",
+    "expected_root_cause": "database_lock",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-005",
+    "expected_root_cause": "database_lock",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-006",
+    "expected_root_cause": "upstream_timeout",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-007",
+    "expected_root_cause": "upstream_timeout",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-008",
+    "expected_root_cause": "upstream_timeout",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-009",
+    "expected_root_cause": "upstream_timeout",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-010",
+    "expected_root_cause": "upstream_timeout",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-011",
+    "expected_root_cause": "connection_pool_exhausted",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-012",
+    "expected_root_cause": "connection_pool_exhausted",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-013",
+    "expected_root_cause": "connection_pool_exhausted",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-014",
+    "expected_root_cause": "connection_pool_exhausted",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-015",
+    "expected_root_cause": "connection_pool_exhausted",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-016",
+    "expected_root_cause": "disk_full",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-017",
+    "expected_root_cause": "disk_full",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-018",
+    "expected_root_cause": "disk_full",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-019",
+    "expected_root_cause": "disk_full",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-020",
+    "expected_root_cause": "disk_full",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-021",
+    "expected_root_cause": "bad_deployment",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-022",
+    "expected_root_cause": "bad_deployment",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-023",
+    "expected_root_cause": "bad_deployment",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-024",
+    "expected_root_cause": "bad_deployment",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-025",
+    "expected_root_cause": "bad_deployment",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "create_ticket"
+  },
+  {
+    "id": "inc-026",
+    "expected_root_cause": "healthy",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "none"
+  },
+  {
+    "id": "inc-027",
+    "expected_root_cause": "healthy",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "none"
+  },
+  {
+    "id": "inc-028",
+    "expected_root_cause": "healthy",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "none"
+  },
+  {
+    "id": "inc-029",
+    "expected_root_cause": "healthy",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "none"
+  },
+  {
+    "id": "inc-030",
+    "expected_root_cause": "healthy",
+    "expected_tools": [
+      "get_service_health",
+      "search_logs",
+      "run_sql",
+      "search_runbooks"
+    ],
+    "expected_action": "none"
+  }
+]

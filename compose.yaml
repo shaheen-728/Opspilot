@@ -1,0 +1,36 @@
+services:
+  api:
+    build: .
+    env_file: .env
+    environment:
+      STATE_DIR: /app/var
+      # Local demo credentials, not a production database account.
+      CHECKPOINT_URL: ${CHECKPOINT_URL:-postgresql://opspilot:local-demo-only@postgres:5432/opspilot?sslmode=disable}
+    ports:
+      - "127.0.0.1:8001:8001"
+    volumes:
+      - app_state:/app/var
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: opspilot
+      POSTGRES_USER: opspilot
+      POSTGRES_PASSWORD: local-demo-only
+    volumes:
+      - checkpoint_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U opspilot -d opspilot"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  app_state:
+  checkpoint_data:
